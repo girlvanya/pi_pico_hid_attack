@@ -1,6 +1,5 @@
 REM =====================
-REM made by Abhinav kumar
-REM go f your self
+REM made by vanya
 REM =====================
 REM
 DELAY 500
@@ -132,7 +131,7 @@ STRING return String.format("%.2f + %.2fi", real, imaginary);
 ENTER
 STRING }}
 ENTER
-STRING // made by abhinavkumar
+STRING // made by vanya
 ENTER
-STRING // Sarthak was helping by watching me
+STRING // gvjb was helping by watching me
 ENTER

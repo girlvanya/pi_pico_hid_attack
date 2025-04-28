@@ -1,0 +1,138 @@
+REM =====================
+REM made by Abhinav kumar
+REM go f your self
+REM =====================
+REM
+DELAY 500
+STRING import java.util.Scanner;
+ENTER
+STRING public class ComplexCalculator {
+ENTER
+STRING public static void main(String args[]) {
+ENTER
+STRING Scanner scanner = new Scanner(System.in);
+ENTER
+STRING System.out.println("Complex Number Calculator");
+ENTER
+STRING System.out.print("Enter the first number (real imaginary): ");
+ENTER
+STRING double real1 = scanner.nextDouble();
+ENTER
+STRING double imag1 = scanner.nextDouble();
+ENTER
+STRING ComplexNumber complex1 = new ComplexNumber(real1, imag1);
+ENTER
+STRING System.out.print("Enter operator (+, -, *, /): ");
+ENTER
+STRING char operator = scanner.next().charAt(0);
+ENTER
+STRING System.out.print("Enter the second number (real imaginary): ");
+ENTER
+STRING double real2 = scanner.nextDouble();
+ENTER
+STRING double imag2 = scanner.nextDouble();
+ENTER
+STRING ComplexNumber complex2 = new ComplexNumber(real2, imag2);
+ENTER
+STRING ComplexNumber result = calculate(complex1, complex2, operator);
+ENTER
+STRING System.out.println("Result: " + result);
+ENTER
+STRING }
+ENTER
+STRING public static ComplexNumber calculate(ComplexNumber num1, ComplexNumber num2, char operator) {
+ENTER
+STRING switch (operator) {
+ENTER
+STRING case '+':
+ENTER
+STRING return num1.add(num2);
+ENTER
+STRING case '-':
+ENTER
+STRING return num1.subtract(num2);
+ENTER
+STRING case '*':
+ENTER
+STRING return num1.multiply(num2);
+ENTER
+STRING case '/':
+ENTER
+STRING return num1.divide(num2);
+ENTER
+STRING default:
+ENTER
+STRING System.out.println("Invalid operator");
+ENTER
+STRING return null;
+ENTER
+STRING }}}
+ENTER
+STRING class ComplexNumber {
+ENTER
+STRING private double real;
+ENTER
+STRING private double imaginary;
+ENTER
+STRING public ComplexNumber(double real, double imaginary) {
+ENTER
+STRING this.real = real;
+ENTER
+STRING this.imaginary = imaginary;
+ENTER
+STRING }
+ENTER
+STRING public ComplexNumber add(ComplexNumber other) {
+ENTER
+STRING return new ComplexNumber(real + other.real, imaginary + other.imaginary);
+ENTER
+STRING }
+ENTER
+STRING public ComplexNumber subtract(ComplexNumber other) {
+ENTER
+STRING return new ComplexNumber(real - other.real, imaginary - other.imaginary);
+ENTER
+STRING }
+ENTER
+STRING public ComplexNumber multiply(ComplexNumber other) {
+ENTER
+STRING double newReal = real * other.real - imaginary * other.imaginary;
+ENTER
+STRING double newImag = real * other.imaginary + imaginary * other.real;
+ENTER
+STRING return new ComplexNumber(newReal, newImag);
+ENTER
+STRING }
+ENTER
+STRING public ComplexNumber divide(ComplexNumber other) {
+ENTER
+STRING double denominator = Math.pow(other.real, 2) + Math.pow(other.imaginary, 2);
+ENTER
+STRING if (denominator == 0) {
+ENTER
+STRING System.out.println("Division by zero!");
+ENTER
+STRING return null;
+ENTER
+STRING }
+ENTER
+STRING double newReal = (real * other.real + imaginary * other.imaginary) / denominator;
+ENTER
+STRING double newImag = (imaginary * other.real - real * other.imaginary) / denominator;
+ENTER
+STRING return new ComplexNumber(newReal, newImag);
+ENTER
+STRING }
+ENTER                                                       
+STRING @Override
+ENTER
+STRING public String toString() {
+ENTER
+STRING return String.format("%.2f + %.2fi", real, imaginary);
+ENTER
+STRING }}
+ENTER
+STRING // made by abhinavkumar
+ENTER
+STRING // Sarthak was helping by watching me
+ENTER

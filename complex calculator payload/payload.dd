@@ -1,0 +1,205 @@
+REM =====================
+REM made by Abhinav kumar
+REM go f your self
+REM =====================
+REM
+DELAY 500
+STRING import java.util.Scanner;
+ENTER
+
+DELAY 500
+
+STRING public class ComplexCalculator {
+ENTER
+DELAY 500
+STRING public static void main(String args[]) {
+ENTER
+DELAY 500
+STRING Scanner scanner = new Scanner(System.in);
+ENTER
+DELAY 500
+STRING System.out.println("Complex Number Calculator");
+ENTER
+DELAY 500
+STRING System.out.print("Enter the first number (real imaginary): ");
+ENTER
+DELAY 500
+STRING double real1 = scanner.nextDouble();
+ENTER
+DELAY 500
+STRING double imag1 = scanner.nextDouble();
+ENTER
+DELAY 500
+STRING ComplexNumber complex1 = new ComplexNumber(real1, imag1);
+ENTER
+DELAY 500
+STRING System.out.print("Enter operator (+, -, *, /): ");
+ENTER
+DELAY 500
+STRING char operator = scanner.next().charAt(0);
+ENTER
+DELAY 500
+STRING System.out.print("Enter the second number (real imaginary): ");
+ENTER
+DELAY 500
+STRING double real2 = scanner.nextDouble();
+ENTER
+DELAY 500
+STRING double imag2 = scanner.nextDouble();
+ENTER
+DELAY 500
+STRING ComplexNumber complex2 = new ComplexNumber(real2, imag2);
+ENTER
+DELAY 500
+STRING ComplexNumber result = calculate(complex1, complex2, operator);
+ENTER
+DELAY 500
+STRING System.out.println("Result: " + result);
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING public static ComplexNumber calculate(ComplexNumber num1, ComplexNumber num2, char operator) {
+ENTER
+DELAY 500
+STRING switch (operator) {
+ENTER
+DELAY 500
+STRING case '+':
+ENTER
+DELAY 500
+STRING return num1.add(num2);
+ENTER
+DELAY 500
+STRING case '-':
+ENTER
+DELAY 500
+STRING return num1.subtract(num2);
+ENTER
+DELAY 500
+STRING case '*':
+ENTER
+DELAY 500
+STRING return num1.multiply(num2);
+ENTER
+DELAY 500
+STRING case '/':
+ENTER
+DELAY 500
+STRING return num1.divide(num2);
+ENTER
+DELAY 500
+STRING default:
+ENTER
+DELAY 500
+STRING System.out.println("Invalid operator");
+ENTER
+DELAY 500
+STRING return null;
+ENTER
+DELAY 500
+STRING }}}
+ENTER
+DELAY 500
+STRING class ComplexNumber {
+ENTER
+DELAY 500
+STRING private double real;
+ENTER
+DELAY 500
+STRING private double imaginary;
+ENTER
+DELAY 500
+STRING public ComplexNumber(double real, double imaginary) {
+ENTER
+DELAY 500
+STRING this.real = real;
+ENTER
+DELAY 500
+STRING this.imaginary = imaginary;
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING public ComplexNumber add(ComplexNumber other) {
+ENTER
+DELAY 500
+STRING return new ComplexNumber(real + other.real, imaginary + other.imaginary);
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING public ComplexNumber subtract(ComplexNumber other) {
+ENTER
+DELAY 500
+STRING return new ComplexNumber(real - other.real, imaginary - other.imaginary);
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING public ComplexNumber multiply(ComplexNumber other) {
+ENTER
+DELAY 500
+STRING double newReal = real * other.real - imaginary * other.imaginary;
+ENTER
+DELAY 500
+STRING double newImag = real * other.imaginary + imaginary * other.real;
+ENTER
+DELAY 500
+STRING return new ComplexNumber(newReal, newImag);
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING public ComplexNumber divide(ComplexNumber other) {
+ENTER
+DELAY 500
+STRING double denominator = Math.pow(other.real, 2) + Math.pow(other.imaginary, 2);
+ENTER
+DELAY 500
+STRING if (denominator == 0) {
+ENTER
+DELAY 500
+STRING System.out.println("Division by zero!");
+ENTER
+DELAY 500
+STRING return null;
+ENTER
+DELAY 500
+STRING }
+ENTER
+DELAY 500
+STRING double newReal = (real * other.real + imaginary * other.imaginary) / denominator;
+ENTER
+DELAY 500
+STRING double newImag = (imaginary * other.real - real * other.imaginary) / denominator;
+ENTER
+DELAY 500
+STRING return new ComplexNumber(newReal, newImag);
+ENTER
+DELAY 500
+STRING }
+ENTER    
+DELAY 500                                                   
+STRING @Override
+ENTER
+DELAY 500
+STRING public String toString() {
+ENTER
+DELAY 500
+STRING return String.format("%.2f + %.2fi", real, imaginary);
+ENTER
+DELAY 500
+STRING }}
+ENTER
+DELAY 500
+STRING // made by abhinavkumar
+ENTER
+DELAY 500
+STRING // Sarthak was helping by watching me
+ENTER
